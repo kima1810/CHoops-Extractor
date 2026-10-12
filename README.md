@@ -1,33 +1,33 @@
-## Choops Extractor
+# CHoops Modding Studio — development rebuild
 
-*This is the continuation of a discontinued tool by BPhit in an effort to expand development on College Hoops 2K Reborn*
+Native PySide6 desktop tools for PS3 College Hoops 2K8: lazy archive/nested-record browsing, raw extraction, DDS preview/export/import, confirmed roster fields, replacement-folder staging and separate JB builds. The source game remains read-only.
 
-### Instructions
-1. Download the file from the releases page on here.
-2. Use 7-zip to extract it somewhere. You'll see two files: choops-extractor.exe and gtf2dds.exe
-3. Open a command prompt and type `choops-extractor.exe rip <path to game files up till USRDIR> <path to output>`
-4. It will take awhile, it will build a cache and then go through each IFF one by one to extract the contents.
+The full mandate remains incomplete. Start with [current status](docs/CURRENT_STATUS.md), [secondary Codex prompt](docs/SECONDARY_CODEX_PROMPT.md), [collaboration](docs/COLLABORATION.md), and [test report](docs/TEST_REPORT.md). Development releases use the v1.0x train; check GitHub for the latest tag.
 
-### Usage
-By default, the tool will extract all files within the IFFs. It will automatically convert the textures to DDS format.
+```powershell
+python -m venv .venv
+python tools/dev/setup.py
+.\.venv\Scripts\python.exe -m choops_py.studio
+.\.venv\Scripts\python.exe -m choops_py.cli --help
+```
 
-#### Help
-If you want to get documentation on any of the options from the command prompt, use `choops-extractor.exe help` or `choops-extractor.exe help rip`
+Open the original JB/USRDIR in Explorer, double-click an asset, inspect/preview textures, save compatible edited copies, and stage them through Mod Builder. All generated output currently belongs under output/. No Node or HTTP server is required.
 
-#### IFF Only
-If you do not want to extract the sub-files, you can add `--iff-only` to the command prompt and it will extract the full .iff file without any textures.
+Local verification exercised read-only real inputs and separate generated outputs; environment-specific measurements are excluded from public documentation. Unknown formats stay read-only/unavailable, and runtime testing is NOT RUN.
 
-#### Index
-If you know which index you want to extract, you can use `-i <index>`. The index must be a number. It will extract the IFF file at <index> in the game files.
+DDS import, export and texture previews use built-in conversion; separate converter executables are unnecessary. Historical converters are used only for optional local comparisons and are excluded from Windows packages; [provenance](docs/rebuild/CONVERTER_PROVENANCE.md).
 
-#### File by name
-If you only want to extract one IFF file by name, you can use `-f <name>`. This will ONLY extract the IFF file with the <name> specified. You have to include .iff on the end of the name.
+Recursive staging automatically restores non-stadium artwork to the selected base JB's texture layouts. Models / Courts can prepare a reusable single-surface court from a supplied template ZIP, retaining only the full-court color texture and a correctly routed bump texture. See [court preparation and resolution limits](docs/SINGLE_SURFACE_COURT.md). Static verification does not establish a crash-free gameplay resolution.
 
-#### Cache
-If you want to force re-build the cache, use `-c`
+See [user guide](docs/USER_GUIDE.md), [development](docs/DEVELOPER_GUIDE.md), [format evidence](docs/FORMAT_SPECIFICATIONS.md), [performance](docs/PERFORMANCE.md), [architecture](docs/rebuild/ARCHITECTURE.md) and [acceptance gates](docs/rebuild/ACCEPTANCE_TESTS.md). Historical tags/docs remain preserved and must not be read as current proof.
 
-#### Log output
-If you want to customize where to put the log output, use `--log-output <logPath>`. By default, the log is placed in the output directory.
+![Actual native archive explorer](docs/rebuild/screenshots/explorer.png)
 
-#### Show console
-If you want to show the log in the console in addition to the log file, use `--show-console`.
+The experimental [Audio workspace](docs/AUDIO_WORKFLOW.md) provides separate
+Licensed Music and Fight Songs views, WAV export/replacement preparation and
+mapped cover-art actions. Song-title editing is unavailable and EBOOT remains
+read-only. The standalone Windows package includes restricted LGPL audio helpers
+with corresponding source archives and license notices; Windows CI has verified
+the packaged WAV round trip on the current development branch.
+Both Codex instances maintain documentation and submit each update through a PR;
+[AGENTS.md](AGENTS.md) defines the shared rules.

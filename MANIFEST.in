@@ -1,0 +1,7 @@
+include README.md AGENTS.md
+recursive-include docs *.md
+recursive-include tools/dev *.py
+recursive-include tools/audio_encoder *.py *.cpp *.txt *.md
+recursive-include tools/audio_codec *.sh *.txt *.md
+recursive-include choops_py/audio_tools *.json
+exclude tools/gtf2dds.exe tools/dds2gtf.exe

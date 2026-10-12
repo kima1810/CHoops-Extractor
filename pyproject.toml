@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "choops-extractor-reborn"
+version = "1.0b0"
+requires-python = ">=3.11"
+description = "Preservation-first PS3 College Hoops 2K8 archive tools"
+[project.optional-dependencies]
+test = ["pytest>=8"]
+desktop = ["PySide6>=6.8,<7", "Pillow>=11"]
+dev = ["PySide6>=6.8,<7", "Pillow>=11", "pytest>=8", "pytest-qt>=4", "ruff>=0.9", "mypy>=1.14", "psutil>=6", "PyInstaller>=6"]
+[project.scripts]
+choops = "choops_py.cli:main"
+choops-studio = "choops_py.studio:main"
+[tool.setuptools.packages.find]
+include = ["choops_py*"]
+[tool.setuptools.package-data]
+choops_py = ["archive/names.json", "archive/verified_names.json", "formats/native/*.c", "formats/native/LICENSE.txt", "audio_tools/soundtrack_names.json"]
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+markers = ["unit: synthetic parser/model tests", "integration: workflow tests", "windows: actual native converter tests", "real_game: private immutable game fixture", "gui: Qt window tests", "performance: measured benchmarks", "runtime_manual: manual console/emulator gate"]

@@ -1,0 +1,614 @@
+{
+  "schema": 1,
+  "tracks": [
+    {
+      "index": 0,
+      "title": "Til U Had Enough",
+      "artist": "Topkat",
+      "category": "Soundtrack",
+      "cover_record": "000"
+    },
+    {
+      "index": 1,
+      "title": "Spit It Clearly",
+      "artist": "Dilated Peoples",
+      "category": "Soundtrack",
+      "cover_record": "001"
+    },
+    {
+      "index": 2,
+      "title": "Under Classmen",
+      "artist": "Strange Fruit Project",
+      "category": "Soundtrack",
+      "cover_record": "002"
+    },
+    {
+      "index": 3,
+      "title": "It Feels Alright",
+      "artist": "Black Lips",
+      "category": "Soundtrack",
+      "cover_record": "003"
+    },
+    {
+      "index": 4,
+      "title": "Eddie's Gun",
+      "artist": "The Kooks",
+      "category": "Soundtrack",
+      "cover_record": "004"
+    },
+    {
+      "index": 5,
+      "title": "Without A Doubt",
+      "artist": "Jurassic 5",
+      "category": "Soundtrack",
+      "cover_record": "005"
+    },
+    {
+      "index": 6,
+      "title": "Mash",
+      "artist": "J Dilla, MF Doom, Guilty Simpson",
+      "category": "Soundtrack",
+      "cover_record": "006"
+    },
+    {
+      "index": 7,
+      "title": "Positive Contact",
+      "artist": "Deltron 3030",
+      "category": "Soundtrack",
+      "cover_record": "007"
+    },
+    {
+      "index": 8,
+      "title": "Legendary Lyricist",
+      "artist": "Percee P",
+      "category": "Soundtrack",
+      "cover_record": "008"
+    },
+    {
+      "index": 9,
+      "title": "Chump",
+      "artist": "Oh No",
+      "category": "Soundtrack",
+      "cover_record": "009"
+    },
+    {
+      "index": 10,
+      "title": "Hi Hi Yikas",
+      "artist": "College Fight Songs",
+      "category": "Fight song",
+      "cover_record": "021"
+    },
+    {
+      "index": 11,
+      "title": "Yea Alabama",
+      "artist": "College Fight Songs",
+      "category": "Fight song",
+      "cover_record": "021"
+    },
+    {
+      "index": 12,
+      "title": "Bear Down, Arizona",
+      "artist": "College Fight Songs",
+      "category": "Fight song",
+      "cover_record": "021"
+    },
+    {
+      "index": 13,
+      "title": "Arkansas Fight",
+      "artist": "College Fight Songs",
+      "category": "Fight song",
+      "cover_record": "021"
+    },
+    {
+      "index": 14,
+      "title": "Fight, Team, Fight",
+      "artist": "College Fight Songs",
+      "category": "Fight song",
+      "cover_record": "021"
+    },
+    {
+      "index": 15,
+      "title": "For Boston",
+      "artist": "College Fight Songs",
+      "category": "Fight song",
+      "cover_record": "021"
+    },
+    {
+      "index": 16,
+      "title": "Big C",
+      "artist": "College Fight Songs",
+      "category": "Fight song",
+      "cover_record": "021"
+    },
+    {
+      "index": 17,
+      "title": "Let's Go Wildcats",
+      "artist": "College Fight Songs",
+      "category": "Fight song",
+      "cover_record": "021"
+    },
+    {
+      "index": 18,
+      "title": "Tiger Rag",
+      "artist": "College Fight Songs",
+      "category": "Fight song",
+      "cover_record": "021"
+    },
+    {
+      "index": 19,
+      "title": "UConn Husky",
+      "artist": "College Fight Songs",
+      "category": "Fight song",
+      "cover_record": "021"
+    },
+    {
+      "index": 20,
+      "title": "Fight! Blue Devils, Fight",
+      "artist": "College Fight Songs",
+      "category": "Fight song",
+      "cover_record": "021"
+    },
+    {
+      "index": 21,
+      "title": "E.C. Victory",
+      "artist": "College Fight Songs",
+      "category": "Fight song",
+      "cover_record": "021"
+    },
+    {
+      "index": 22,
+      "title": "Orange And The Blue",
+      "artist": "College Fight Songs",
+      "category": "Fight song",
+      "cover_record": "021"
+    },
+    {
+      "index": 23,
+      "title": "Butler War Song",
+      "artist": "College Fight Songs",
+      "category": "Fight song",
+      "cover_record": "021"
+    },
+    {
+      "index": 24,
+      "title": "Fight CU",
+      "artist": "College Fight Songs",
+      "category": "Fight song",
+      "cover_record": "021"
+    },
+    {
+      "index": 25,
+      "title": "Fight On, Rams",
+      "artist": "College Fight Songs",
+      "category": "Fight song",
+      "cover_record": "021"
+    },
+    {
+      "index": 26,
+      "title": "Glory, Glory To Old Georgia",
+      "artist": "College Fight Songs",
+      "category": "Fight song",
+      "cover_record": "021"
+    },
+    {
+      "index": 27,
+      "title": "Ramblin' Wreck Of Georgia Tech",
+      "artist": "College Fight Songs",
+      "category": "Fight song",
+      "cover_record": "021"
+    },
+    {
+      "index": 28,
+      "title": "War Chant",
+      "artist": "College Fight Songs",
+      "category": "Fight song",
+      "cover_record": "021"
+    },
+    {
+      "index": 29,
+      "title": "10,000 Men Of Harvard",
+      "artist": "College Fight Songs",
+      "category": "Fight song",
+      "cover_record": "021"
+    },
+    {
+      "index": 30,
+      "title": "Illinois Loyalty",
+      "artist": "College Fight Songs",
+      "category": "Fight song",
+      "cover_record": "021"
+    },
+    {
+      "index": 31,
+      "title": "ISU Fight Song",
+      "artist": "College Fight Songs",
+      "category": "Fight song",
+      "cover_record": "021"
+    },
+    {
+      "index": 32,
+      "title": "I'm A Jayhawk",
+      "artist": "College Fight Songs",
+      "category": "Fight song",
+      "cover_record": "021"
+    },
+    {
+      "index": 33,
+      "title": "There Goes Old Georgetown",
+      "artist": "College Fight Songs",
+      "category": "Fight song",
+      "cover_record": "021"
+    },
+    {
+      "index": 34,
+      "title": "On! On! U of K",
+      "artist": "College Fight Songs",
+      "category": "Fight song",
+      "cover_record": "021"
+    },
+    {
+      "index": 35,
+      "title": "Fight, U of L",
+      "artist": "College Fight Songs",
+      "category": "Fight song",
+      "cover_record": "021"
+    },
+    {
+      "index": 36,
+      "title": "Indiana, Our Indiana",
+      "artist": "College Fight Songs",
+      "category": "Fight song",
+      "cover_record": "021"
+    },
+    {
+      "index": 37,
+      "title": "Victory Song",
+      "artist": "College Fight Songs",
+      "category": "Fight song",
+      "cover_record": "021"
+    },
+    {
+      "index": 38,
+      "title": "On Iowa",
+      "artist": "College Fight Songs",
+      "category": "Fight song",
+      "cover_record": "021"
+    },
+    {
+      "index": 39,
+      "title": "Go, Tigers, Go",
+      "artist": "College Fight Songs",
+      "category": "Fight song",
+      "cover_record": "021"
+    },
+    {
+      "index": 40,
+      "title": "Miami U How-Dee-Doo",
+      "artist": "College Fight Songs",
+      "category": "Fight song",
+      "cover_record": "021"
+    },
+    {
+      "index": 41,
+      "title": "The Victors",
+      "artist": "College Fight Songs",
+      "category": "Fight song",
+      "cover_record": "021"
+    },
+    {
+      "index": 42,
+      "title": "Wildcat Victory",
+      "artist": "College Fight Songs",
+      "category": "Fight song",
+      "cover_record": "021"
+    },
+    {
+      "index": 43,
+      "title": "Fight For LSU",
+      "artist": "College Fight Songs",
+      "category": "Fight song",
+      "cover_record": "021"
+    },
+    {
+      "index": 44,
+      "title": "Hark The Sound",
+      "artist": "College Fight Songs",
+      "category": "Fight song",
+      "cover_record": "021"
+    },
+    {
+      "index": 45,
+      "title": "Victory March",
+      "artist": "College Fight Songs",
+      "category": "Fight song",
+      "cover_record": "021"
+    },
+    {
+      "index": 46,
+      "title": "Across The Field",
+      "artist": "College Fight Songs",
+      "category": "Fight song",
+      "cover_record": "021"
+    },
+    {
+      "index": 47,
+      "title": "Boomer Sooner",
+      "artist": "College Fight Songs",
+      "category": "Fight song",
+      "cover_record": "021"
+    },
+    {
+      "index": 48,
+      "title": "Ride 'Em Cowboys",
+      "artist": "College Fight Songs",
+      "category": "Fight song",
+      "cover_record": "021"
+    },
+    {
+      "index": 49,
+      "title": "Mighty Oregon",
+      "artist": "College Fight Songs",
+      "category": "Fight song",
+      "cover_record": "021"
+    },
+    {
+      "index": 50,
+      "title": "Fight On, State!",
+      "artist": "College Fight Songs",
+      "category": "Fight song",
+      "cover_record": "021"
+    },
+    {
+      "index": 51,
+      "title": "Pitt Victory Song",
+      "artist": "College Fight Songs",
+      "category": "Fight song",
+      "cover_record": "021"
+    },
+    {
+      "index": 52,
+      "title": "MSU Fight Song",
+      "artist": "College Fight Songs",
+      "category": "Fight song",
+      "cover_record": "021"
+    },
+    {
+      "index": 53,
+      "title": "When The Saints Go Marching In",
+      "artist": "College Fight Songs",
+      "category": "Fight song",
+      "cover_record": "021"
+    },
+    {
+      "index": 54,
+      "title": "Every True Son",
+      "artist": "College Fight Songs",
+      "category": "Fight song",
+      "cover_record": "021"
+    },
+    {
+      "index": 55,
+      "title": "Down, Down The Field",
+      "artist": "College Fight Songs",
+      "category": "Fight song",
+      "cover_record": "021"
+    },
+    {
+      "index": 56,
+      "title": "Nevada Fight Song",
+      "artist": "College Fight Songs",
+      "category": "Fight song",
+      "cover_record": "021"
+    },
+    {
+      "index": 57,
+      "title": "Texas Fight",
+      "artist": "College Fight Songs",
+      "category": "Fight song",
+      "cover_record": "021"
+    },
+    {
+      "index": 58,
+      "title": "Aggie War Hymn",
+      "artist": "College Fight Songs",
+      "category": "Fight song",
+      "cover_record": "021"
+    },
+    {
+      "index": 59,
+      "title": "Fight Raiders Fight",
+      "artist": "College Fight Songs",
+      "category": "Fight song",
+      "cover_record": "021"
+    },
+    {
+      "index": 60,
+      "title": "Aggies Oh Aggies",
+      "artist": "College Fight Songs",
+      "category": "Fight song",
+      "cover_record": "021"
+    },
+    {
+      "index": 61,
+      "title": "NC State Fight Song",
+      "artist": "College Fight Songs",
+      "category": "Fight song",
+      "cover_record": "021"
+    },
+    {
+      "index": 62,
+      "title": "Fight On",
+      "artist": "College Fight Songs",
+      "category": "Fight song",
+      "cover_record": "021"
+    },
+    {
+      "index": 63,
+      "title": "Utah Man",
+      "artist": "College Fight Songs",
+      "category": "Fight song",
+      "cover_record": "021"
+    },
+    {
+      "index": 64,
+      "title": "SJU Fight Song",
+      "artist": "College Fight Songs",
+      "category": "Fight song",
+      "cover_record": "021"
+    },
+    {
+      "index": 65,
+      "title": "Down The Field",
+      "artist": "College Fight Songs",
+      "category": "Fight song",
+      "cover_record": "021"
+    },
+    {
+      "index": 66,
+      "title": "When Vandy Starts To Fight",
+      "artist": "College Fight Songs",
+      "category": "Fight song",
+      "cover_record": "021"
+    },
+    {
+      "index": 67,
+      "title": "Tech Triumph",
+      "artist": "College Fight Songs",
+      "category": "Fight song",
+      "cover_record": "021"
+    },
+    {
+      "index": 68,
+      "title": "O Here's To Wake Forest",
+      "artist": "College Fight Songs",
+      "category": "Fight song",
+      "cover_record": "021"
+    },
+    {
+      "index": 69,
+      "title": "Bow Down To Washington",
+      "artist": "College Fight Songs",
+      "category": "Fight song",
+      "cover_record": "021"
+    },
+    {
+      "index": 70,
+      "title": "WSU Fight Song",
+      "artist": "College Fight Songs",
+      "category": "Fight song",
+      "cover_record": "021"
+    },
+    {
+      "index": 71,
+      "title": "Fight Mountaineers",
+      "artist": "College Fight Songs",
+      "category": "Fight song",
+      "cover_record": "021"
+    },
+    {
+      "index": 72,
+      "title": "St. Xavier For Aye",
+      "artist": "College Fight Songs",
+      "category": "Fight song",
+      "cover_record": "021"
+    },
+    {
+      "index": 73,
+      "title": "On Wisconsin",
+      "artist": "College Fight Songs",
+      "category": "Fight song",
+      "cover_record": "021"
+    },
+    {
+      "index": 74,
+      "title": "You're Doing It",
+      "artist": "James Pants",
+      "category": "Soundtrack",
+      "cover_record": "010"
+    },
+    {
+      "index": 75,
+      "title": "My Piano",
+      "artist": "Hot Chip",
+      "category": "Soundtrack",
+      "cover_record": "011"
+    },
+    {
+      "index": 76,
+      "title": "Professor X",
+      "artist": "Arabian Prince",
+      "category": "Soundtrack",
+      "cover_record": "012"
+    },
+    {
+      "index": 77,
+      "title": "Thru Tha Lane",
+      "artist": "Strange Fruit Project",
+      "category": "Soundtrack",
+      "cover_record": "002"
+    },
+    {
+      "index": 78,
+      "title": "Idea Master",
+      "artist": "Ski Beatz",
+      "category": "Soundtrack",
+      "cover_record": "013"
+    },
+    {
+      "index": 79,
+      "title": "Just Move",
+      "artist": "E Reece",
+      "category": "Soundtrack",
+      "cover_record": "014"
+    },
+    {
+      "index": 80,
+      "title": "Lord Of The Pants",
+      "artist": "DJ Romanowski",
+      "category": "Soundtrack",
+      "cover_record": "015"
+    },
+    {
+      "index": 81,
+      "title": "Black Dirt",
+      "artist": "Bumble Beez",
+      "category": "Soundtrack",
+      "cover_record": "016"
+    },
+    {
+      "index": 82,
+      "title": "Plaster Casts Of Everything",
+      "artist": "Liars",
+      "category": "Soundtrack",
+      "cover_record": "017"
+    },
+    {
+      "index": 83,
+      "title": "Goblin City",
+      "artist": "The Panthers",
+      "category": "Soundtrack",
+      "cover_record": "018"
+    },
+    {
+      "index": 84,
+      "title": "Joyride",
+      "artist": "Heliocentrics",
+      "category": "Soundtrack",
+      "cover_record": "019"
+    },
+    {
+      "index": 85,
+      "title": "Make It Fast",
+      "artist": "Guilty Simpson",
+      "category": "Soundtrack",
+      "cover_record": "020"
+    },
+    {
+      "index": 86,
+      "title": "Time To Shine",
+      "artist": "Joe Blaq",
+      "category": "Soundtrack",
+      "cover_record": "022"
+    }
+  ]
+}
