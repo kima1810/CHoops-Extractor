@@ -104,6 +104,11 @@ class CPU:
         elif mn == 'mfcr': r[R_(ops[0])] = sum(v << (28 - 4 * i) for i, v in enumerate(self.cr))
         elif mn == 'mtcrf' or mn == 'mtcr':
             v = r[R_(ops[-1])]; self.cr = [(v >> (28 - 4 * i)) & 15 for i in range(8)]
+        elif mn == 'lwzx':
+            r[R_(ops[0])] = self.m.u((r[R_(ops[1])] + r[R_(ops[2])]) & M64, 4)
+        elif mn == 'cmplw':
+            f = int(ops[0].replace('cr', '')) if len(ops) == 3 else 0
+            self.setcr(f, r[R_(ops[-2])] & 0xFFFFFFFF, r[R_(ops[-1])] & 0xFFFFFFFF)
         elif mn == 'cmplwi':
             f = int(ops[0].replace('cr', '')) if len(ops) == 3 else 0
             self.setcr(f, r[R_(ops[-2])] & 0xFFFFFFFF, imm(ops[-1]))
@@ -119,6 +124,9 @@ class CPU:
         elif mn == 'ble':
             f = int(ops[0].replace('cr', '')) if len(ops) == 2 else 0
             if self.cr[f] != 4: nxt = imm(ops[-1])
+        elif mn == 'bgt':
+            f = int(ops[0].replace('cr', '')) if len(ops) == 2 else 0
+            if self.cr[f] == 4: nxt = imm(ops[-1])
         else:
             raise RuntimeError(f'unimplemented {mn} {ins.op_str} at {pc:#x}')
         return nxt

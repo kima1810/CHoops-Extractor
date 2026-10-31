@@ -4,14 +4,14 @@ import probe_asm as P
 
 PATCH = r'D:/RPCS3 2026/patches/imported_patch.yml'
 TITLE = 'DEBUG probes: team name functions -> TTY.log'
-PROBES = [('SFRM', 0x1E1610, True)]   # library STR_FROM(handle, wchar*, len): logs caller + text
+PROBES = [('GTEA', 0x1BBB58, 'index')]   # library getTeam(index): logs caller + requested team index
 
 lines = [f'  "{TITLE}":', '    Games:', '      "College Hoops 2K8":', '        BLUS30078: [ All ]',
          '    Author: "Claude Code"',
          '    Notes: "Diagnostic only. Each probed function writes \'TAG caller-address\' to log/TTY.log when it runs. Leave disabled normally."',
          '    Patch Version: 1.0', '    Patch:']
-for tag, addr, text in PROBES:
-    code = P.build(tag, addr, text=text)
+for tag, addr, mode in PROBES:
+    code = P.build(tag, addr, text=mode == 'text', index=mode == 'index')
     words = [int.from_bytes(code[i:i + 4], 'big') for i in range(0, len(code), 4)]
     lines.append(f'      - [ calloc, 0x{addr:08x}, {len(words)} ] # {tag}')
     lines += [f'      - [ be32, 0x{addr:08x}, 0x{w:08x} ]' for w in words]

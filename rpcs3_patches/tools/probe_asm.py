@@ -113,16 +113,42 @@ fin:
 """
 
 
+# IDX_SRC appends the low 16 bits of the saved r3 (an index argument) as 4 hex digits.
+IDX_SRC = """
+    li 0, 0x20
+    stb 0, 0xED(1)
+    ld 8, 0x88(1)
+    li 9, 4
+    addi 10, 1, 0xF1
+idx:
+    andi. 12, 8, 15
+    addi 12, 12, 48
+    cmpwi 7, 12, 57
+    ble 7, idxd
+    addi 12, 12, 39
+idxd:
+    stb 12, 0(10)
+    addi 10, 10, -1
+    srdi 8, 8, 4
+    addi 9, 9, -1
+    cmpwi 7, 9, 0
+    bne 7, idx
+    li 0, 10
+    stb 0, 0xF2(1)
+    li 5, 19
+"""
+
+
 def original(addr):
     with open(EBOOT, 'rb') as f:
         f.seek(addr - 0x10000)
         return struct.unpack('>I', f.read(4))[0]
 
 
-def build(tag, addr, base=0x30000000, text=False):
+def build(tag, addr, base=0x30000000, text=False, index=False):
     assert len(tag) == 4 and tag.isascii()
     t = int.from_bytes(tag.encode(), 'big')
-    code = H.assemble(SRC.format(TAG_HI=hex(t >> 16), TAG_LO=hex(t & 0xFFFF), TEXT=TEXT_SRC if text else PLAIN), base)
+    code = H.assemble(SRC.format(TAG_HI=hex(t >> 16), TAG_LO=hex(t & 0xFFFF), TEXT=IDX_SRC if index else TEXT_SRC if text else PLAIN), base)
     first = original(addr)
     assert first >> 26 not in (16, 18, 19), f'{addr:#x}: first instruction is a branch'
     return code + first.to_bytes(4, 'big')

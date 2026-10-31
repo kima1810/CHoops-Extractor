@@ -4,6 +4,8 @@
   scorebug / Team Select / pregame matchup card, recruit generation, Legacy
   transfers) with its code-cave generators, offline interpreter checks and TTY
   probes. Emulator patches only; the editor still does not patch executables.
+- Add Quick Game team cycling in conference member order (alphabetical after
+  realignment) and a 30-second shot clock to the patch file.
 
 # v1.23
 

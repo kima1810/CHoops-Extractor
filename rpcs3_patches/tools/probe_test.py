@@ -9,8 +9,8 @@ NUL2 = bytes(2)
 NL = chr(10)
 
 
-def run(tag, addr, lr, text=None):
-    m = Mem(); code = P.build(tag, addr, BASE, text=text is not None); m.write(BASE, code)
+def run(tag, addr, lr, text=None, index=None):
+    m = Mem(); code = P.build(tag, addr, BASE, text=text is not None, index=index is not None); m.write(BASE, code)
     if text is not None:
         m.write(0x40000000, text.encode('utf-16-be') + NUL2)
     cpu = CPU(m, None); out = []
@@ -23,6 +23,7 @@ def run(tag, addr, lr, text=None):
     cpu.syscall = sc
     for n in range(32): cpu.r[n] = 0x1000 + n
     if text is not None: cpu.r[4] = 0x40000000
+    if index is not None: cpu.r[3] = index
     cpu.r[1] = STACK; cpu.lr = lr; cpu.cr = [2, 4, 8, 0, 2, 4, 8, 1]
     before = (list(cpu.r), cpu.lr, list(cpu.cr))
     pc, end = BASE, BASE + len(code) - 4          # stop before the copied first instruction
@@ -42,4 +43,6 @@ if __name__ == '__main__':
         o, e, _ = run('SFRM', 0x738F90, 0x8D284, txt)
         exp = 'SFRM 0008d284 ' + want + NL
         print(o, e or 'all preserved'); ok &= o == [exp] and not e
+    o, e, _ = run('GTEA', 0x1BBB58, 0x1BF3A0, index=0x5F)
+    print(o, e or 'all preserved'); ok &= o == ['GTEA 001bf3a0 005f' + NL] and not e
     sys.exit(0 if ok else 1)
