@@ -6,6 +6,9 @@
   probes. Emulator patches only; the editor still does not patch executables.
 - Add Quick Game team cycling in conference member order (alphabetical after
   realignment) and a 30-second shot clock to the patch file.
+- Add a 68-team NCAA Tournament with a four-game First Four (Stage 1, plus a DEBUG
+  copy that logs the bracket build) and the four play-in pages and "PLAY-IN GAME
+  WINNER" slots on the Tournament Tree (Stage 2), with their generators and checks.
 
 # v1.23
 
