@@ -70,8 +70,8 @@ class CPU:
             d, ra = memop(ops[1]); n = {'std': 8, 'stdu': 8, 'stw': 4, 'sth': 2}[mn]
             ea = (r[ra] + d) & M64; self.m.w(ea, n, r[R_(ops[0])])
             if mn == 'stdu': r[ra] = ea
-        elif mn in ('ld', 'lwz', 'lhz'):
-            d, ra = memop(ops[1]); n = {'ld': 8, 'lwz': 4, 'lhz': 2}[mn]
+        elif mn in ('ld', 'lwz', 'lhz', 'lbz'):
+            d, ra = memop(ops[1]); n = {'ld': 8, 'lwz': 4, 'lhz': 2, 'lbz': 1}[mn]
             r[R_(ops[0])] = self.m.u((r[ra] + d) & M64, n)
         elif mn in ('mr', 'or', 'or.', 'mr.'):
             src = R_(ops[1]); r[R_(ops[0])] = r[src]
@@ -112,6 +112,9 @@ class CPU:
         elif mn == 'cmplwi':
             f = int(ops[0].replace('cr', '')) if len(ops) == 3 else 0
             self.setcr(f, r[R_(ops[-2])] & 0xFFFFFFFF, imm(ops[-1]))
+        elif mn in ('cmpld', 'cmpldi'):
+            f = int(ops[0].replace('cr', '')) if len(ops) == 3 else 0
+            self.setcr(f, r[R_(ops[-2])] & M64, r[R_(ops[-1])] & M64 if mn == 'cmpld' else imm(ops[-1]))
         elif mn == 'sc': nxt = self.syscall(pc)
         elif mn == 'stb':
             d, ra = memop(ops[1]); self.m.w((r[ra] + d) & M64, 1, r[R_(ops[0])])

@@ -90,7 +90,42 @@ pages (0x65FD60, 0x65FE98), and redraws the bracket and places the cursor on the
 when a new First Four page's game is not on screen yet (0x65A264). It also hides seeds
 on those pages (0x65DC28, 0x65DCA0) and shows "PLAY-IN GAME WINNER" in every regional
 slot a First Four game feeds (0x65DF24, 0x65DE88, 0x65DEE0, 0x65E7F4; in Legacy the
-unknown team is drawn from 0x65DE88).
+unknown team is drawn from 0x65DE88). The Selection Sunday Show finds a team's region
+(0x5E89BC) only in events 91-94 and 90; Stage 2 also gives teams in events 2-4 the region
+their game feeds. Its seed lookup is unchanged, so play-in teams show no seed, as in stock. The show's data step
+fills each regional's empty slot with the teams of the First Four game feeding it (0x5EC420,
+0x5EC43C; an 11-seed slot gets the first team, 0x5EC438/0x5EC44C), and the game presentation
+seed (0x5F9A08) gives First Four teams 16 or 11. Its First Round Games boxes name each
+play-in matchup ("Team A vs. Team B", template 0x0018C1FB) instead of "Play-in Winner"
+(0x5E6034). Stage 1's undecided 11-seed slots crashed the show's commentary (a line
+reads the opponent's conference, 0x5EA374); Stage 2 gives the commentary the first team of the
+feeding First Four game whenever its featured team is empty (0x5E92A8). The show's play-in team
+values (speech variables 0x7E/0x7F, 0x5E925C/0x5E9274) name the First Four game feeding the
+current matchup, or no team for a matchup without one.
+
+### Selection Show commentary
+
+The announcer's lines come from the `director` record in Director.iff, run on the game's
+script VM (0x77D2C0, one native call per step; opcodes map through the record's import
+table). The show only raises a generic event (0xD9); the dispatcher (0x592C0) builds
+candidates with a compiled line tree (0x60310), whose conditions are value expressions
+evaluated by 0x5BABC (facts via 0x77F670 and 0x77F798), then tries them in order through
+the line check 0x59D30 and starts the first that passes. Three things kept the play-in
+line to East:
+
+- The 1-16 line group is the only one with play-in lines, and its tree reaches them only
+  when the matchup's team 1 is in region 91 (East), where stock's single play-in game went.
+- Every show line has repeat setting 0 (once per show), and 0x59C6C stamps a line when it
+  plays, so East used it up.
+- The group's seed lines are always available as alternatives.
+
+Stage 2 adds three caves. 0x5BABC returns team 1's seed as 1 and its region as 91 for the
+group's two feature expressions whenever a First Four game feeds the current matchup, so
+fed 1-16 and 6-11 matchups take that branch. 0x59D30 lets the play-in lines (team A, then
+team B) play for fed matchups, refuses them elsewhere, and holds back that group's seed
+lines for fed matchups. 0x59C6C does not stamp the two play-in lines. The group's nodes are
+recognised by their bytecode, so Director.iff stays stock. A school with no recorded
+name clip (for example one that joined Division I after 2007) is not spoken.
 
 ## Tools
 
@@ -107,13 +142,17 @@ top of each script):
 - `probe_asm.py`, `probe_test.py`, `probe_patch_write.py`: diagnostic probes that
   write `TAG caller-address [text]` to `log/TTY.log` through sys_tty_write. This is
   how the real name call sites and the team cycler were found; leave them out of
-  normal play.
+  normal play. Besides text and an index, a probe can log the stack back chain
+  (`bt_test.py`) or dump six words from a register or computed address.
+- `show_probe_write.py`: the Selection Show commentary probe entry (variables, tokens,
+  director facts and their values, speech stream lookups; not shipped).
 - `cycler_asm.py`, `cycler_test.py`, `cycler_step_test.py`: Quick Game cycling
   caves and their tests.
 - `first_four_asm.py`, `first_four_test.py`, `ff_debug_test.py`: First Four Stage 1
   caves (and the DEBUG builder report) and their tests.
-- `first_four_tree_asm.py`, `first_four_tree_test.py`: Stage 2 Tournament Tree caves
-  and their tests.
+- `first_four_tree_asm.py`, `first_four_tree_test.py`: Stage 2 Tournament Tree and
+  Selection Show caves and their tests. The commentary tests read a locally extracted
+  `director` record from Director.iff (game data, not included; path at the top).
 - `ff_patch_write.py`: writes the three NCAA Tournament entries into the patch file.
 - `tree_probe_write.py`: diagnostic Tournament Tree navigation probes (not shipped).
 
@@ -121,4 +160,6 @@ These checks only model the game. Confirmed in-game: all three poll-rank entries
 (scorebug, Team Select, matchup card), the transfer entries, Quick Game cycling, the
 30-second shot clock, and both NCAA Tournament stages (four play-in games, winners in
 East 16 / South 16 / Midwest 11 / West 11, appearance credit, the next season's 2K
-Sports Classic, and the four play-in pages on the Tournament Tree).
+Sports Classic, the four play-in pages on the Tournament Tree, and the Selection Show
+naming every First Four matchup on screen and in the commentary: East and South 1-16,
+Midwest and West 6-11).

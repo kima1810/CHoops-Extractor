@@ -55,7 +55,7 @@ digit:
     bne 7, hex
 {TEXT}    li 3, 0
     addi 4, 1, 0xE0
-    addi 6, 1, 0x110
+    addi 6, 1, 0x130
     li 11, 403
     sc
     lwz 0, 0x80(1)
@@ -139,16 +139,100 @@ idxd:
 """
 
 
+# BT_SRC appends up to 6 more return addresses from the stack back chain (each frame's
+# saved LR at 0x10 of its caller's frame); it stops when the chain stops going up the stack.
+BT_SRC = """
+    addi 7, 1, 0x140
+    addi 10, 1, 0xED
+    li 11, 6
+bt:
+    mr 4, 7
+    ld 7, 0(7)
+    cmpld 7, 7, 4
+    ble 7, btend
+    subf 0, 4, 7
+    cmpldi 7, 0, 0x8000
+    bge 7, btend
+    ld 8, 0x10(7)
+    li 0, 0x20
+    stb 0, 0(10)
+    addi 10, 10, 8
+    li 9, 8
+bh:
+    andi. 12, 8, 15
+    addi 12, 12, 48
+    cmpwi 7, 12, 57
+    ble 7, bd
+    addi 12, 12, 39
+bd:
+    stb 12, 0(10)
+    addi 10, 10, -1
+    srdi 8, 8, 4
+    addi 9, 9, -1
+    cmpwi 7, 9, 0
+    bne 7, bh
+    addi 10, 10, 9
+    addi 11, 11, -1
+    cmpwi 7, 11, 0
+    bne 7, bt
+btend:
+    li 0, 10
+    stb 0, 0(10)
+    subf 5, 1, 10
+    addi 5, 5, -0xDF
+"""
+
+
+DUMP_PRE = "    ld 7, 0x88(1)" + chr(10)
+# DUMP_SRC appends the first six words at the saved r3 (a record pointer); pointers
+# below 0x10000 print nothing.
+DUMP_SRC = """
+{PRE}    addi 10, 1, 0xED
+    cmplwi 7, 7, 0xffff
+    ble 7, dend
+    li 11, 6
+dw:
+    lwz 8, 0(7)
+    addi 7, 7, 4
+    li 0, 0x20
+    stb 0, 0(10)
+    addi 10, 10, 8
+    li 9, 8
+dh:
+    andi. 12, 8, 15
+    addi 12, 12, 48
+    cmpwi 7, 12, 57
+    ble 7, dd
+    addi 12, 12, 39
+dd:
+    stb 12, 0(10)
+    addi 10, 10, -1
+    srdi 8, 8, 4
+    addi 9, 9, -1
+    cmpwi 7, 9, 0
+    bne 7, dh
+    addi 10, 10, 9
+    addi 11, 11, -1
+    cmpwi 7, 11, 0
+    bne 7, dw
+dend:
+    li 0, 10
+    stb 0, 0(10)
+    subf 5, 1, 10
+    addi 5, 5, -0xDF
+"""
+
+
 def original(addr):
     with open(EBOOT, 'rb') as f:
         f.seek(addr - 0x10000)
         return struct.unpack('>I', f.read(4))[0]
 
 
-def build(tag, addr, base=0x30000000, text=False, index=False):
+def build(tag, addr, base=0x30000000, text=False, index=False, bt=False, dump=False, pre=None):
     assert len(tag) == 4 and tag.isascii()
     t = int.from_bytes(tag.encode(), 'big')
-    code = H.assemble(SRC.format(TAG_HI=hex(t >> 16), TAG_LO=hex(t & 0xFFFF), TEXT=IDX_SRC if index else TEXT_SRC if text else PLAIN), base)
+    code = H.assemble(SRC.format(TAG_HI=hex(t >> 16), TAG_LO=hex(t & 0xFFFF), TEXT=DUMP_SRC.replace('{PRE}', pre or DUMP_PRE) if dump else BT_SRC if bt else IDX_SRC if index else TEXT_SRC if text else PLAIN), base)
     first = original(addr)
     assert first >> 26 not in (16, 18, 19), f'{addr:#x}: first instruction is a branch'
     return code + first.to_bytes(4, 'big')

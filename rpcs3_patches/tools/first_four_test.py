@@ -37,6 +37,8 @@ class CPU2(CPU):
         elif mn == 'lfs': self.f[R_(ops[0])] = self.m.u(mem(ops[1]), 4)
         elif mn == 'stfs': self.m.w(mem(ops[1]), 4, self.f[R_(ops[0])])
         elif mn == 'ba': return int(ops[0], 0)
+        elif mn == 'stwx':
+            self.m.w((r[R_(ops[1])] + r[R_(ops[2])]) & M64, 4, r[R_(ops[0])])
         elif mn == 'cmpdi':
             f = int(ops[0].replace('cr', '')) if len(ops) == 3 else 0
             self.setcr(f, sx(r[R_(ops[-2])], 64), int(ops[-1], 0))

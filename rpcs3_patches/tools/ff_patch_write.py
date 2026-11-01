@@ -27,7 +27,7 @@ TREE_NOTES = ("Needs the Stage 1 entry. The tree's NCAA pages already include Fi
               "play-in, event 90). The NCAA tree's play-in box (0x65A548) shows the open First Four page's game; on a First Four page LT/RT step from the page (0x65FD60, 0x65FE98) and on arrival the bracket is redrawn for the page and the cursor put on the play-in box (0x65A264), so all four play-in pages can be reached. These caves also extend the screen's event 90 special cases: no seeds on the "
               "play-in pages (0x65DC28, 0x65DCA0), and 'PLAY-IN GAME WINNER' (text 0x65DF24, Legacy TBD paths 0x65DE88 and 0x65DEE0, box style 0x65E7F4) in "
               "every regional first-round slot a First Four game feeds (East 16, South 16, Midwest 11, West 11) "
-              "instead of only East 1-16.")
+              "instead of only East 1-16. The Selection Sunday Show's region lookup (0x5E89BC) also places teams in First Four events 2-4 in the region their game feeds; its data step (0x5EC420, 0x5EC43C, 0x5EC438, 0x5EC44C) takes each region's play-in teams from the First Four game feeding it instead of always event 90, and the game presentation seed (0x5F9A08) gives those teams 16 or 11. Its First Round Games boxes name the play-in matchup ('Team A vs. Team B', 0x5E6034) instead of 'Play-in Winner', and when the commentary's featured team is an undecided First Four slot (null, which crashed the show in the Midwest 6-11 game) it uses that game's first team (0x5E92A8); the show's play-in team values (speech variables 0x7E/0x7F, 0x5E925C/0x5E9274) name the First Four game feeding the current matchup instead of always event 90, and no team for a matchup without one. The commentary director plays each show line once (repeat 0), so the play-in line was spent on East; the director's line check (0x59D30) lets the play-in lines (team A, then team B) play for every matchup a First Four game feeds and holds back that group's seed lines there; those two play-in lines are also never marked as played (0x59C6C), since the director's line tree drops played lines. That tree puts the play-in line on the branch where the matchup's team 1 is in region 91 (East, stock's only play-in slot), and only the 1-16 line group has the play-in lines, so for every matchup a First Four game feeds the condition evaluator (0x5BABC) gives team 1's region as 91 and its seed as 1, which also sends the Midwest and West 6-11 matchups to those lines.")
 
 
 def entry(name, notes, debug, blocks=None, version='1.2'):
@@ -51,7 +51,7 @@ def put(text, name, body):
 text = open(PATCH, encoding='utf-8').read()
 text = put(text, NAME, entry(NAME, NOTES, False))
 text = put(text, DEBUG_NAME, entry(DEBUG_NAME, DEBUG_NOTES, True))
-text = put(text, TREE_NAME, entry(TREE_NAME, TREE_NOTES, False, G.blocks(), '1.7'))
+text = put(text, TREE_NAME, entry(TREE_NAME, TREE_NOTES, False, G.blocks(), '2.7'))
 text = text.replace("# conference member order, and a 30-second shot clock.",
                     "# conference member order, a 30-second shot clock, and a 68-team NCAA field\n# with a four-game First Four.")
 open(PATCH, 'w', encoding='utf-8', newline='\n').write(text)
