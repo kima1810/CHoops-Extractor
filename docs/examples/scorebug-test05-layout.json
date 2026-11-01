@@ -1,0 +1,316 @@
+{
+  "scorebug_bottombar": {
+    "parts": {
+      "polySurface16": {
+        "bounds": [
+          -360,
+          -208.5,
+          360,
+          -168.5
+        ],
+        "rectify_uv": true,
+        "single_quad": true
+      },
+      "polySurface17": {
+        "bounds": [
+          -359,
+          -207.5,
+          -321,
+          -169.5
+        ],
+        "rectify_uv": true,
+        "single_quad": true
+      },
+      "color_1": {
+        "bounds": [
+          -320,
+          -207.5,
+          -153.5,
+          -169.5
+        ],
+        "rectify_uv": true,
+        "rgb": [
+          0.1,
+          0.1,
+          0.1
+        ]
+      },
+      "color_2": {
+        "bounds": [
+          -108.5,
+          -207.5,
+          57.5,
+          -169.5
+        ],
+        "rectify_uv": true,
+        "rgb": [
+          0.1,
+          0.1,
+          0.1
+        ]
+      },
+      "logo1": {
+        "bounds": [
+          -320,
+          -207.5,
+          -282,
+          -169.5
+        ],
+        "rectify_uv": true
+      },
+      "logo2": {
+        "bounds": [
+          -108,
+          -207.5,
+          -70,
+          -169.5
+        ],
+        "rectify_uv": true
+      },
+      "frame1": {
+        "hide": true
+      },
+      "frame2": {
+        "hide": true
+      },
+      "frame3": {
+        "hide": true
+      },
+      "frame4": {
+        "hide": true
+      },
+      "frame5": {
+        "hide": true
+      },
+      "frame6": {
+        "hide": true
+      },
+      "frame7": {
+        "hide": true
+      },
+      "ncaa2k8": {
+        "hide": true
+      },
+      "drop_shadow": {
+        "bounds": [
+          -360,
+          -211.5,
+          360,
+          -208.5
+        ],
+        "straighten": true
+      },
+      "top_greybar": {
+        "hide": true
+      },
+      "bot_greybar": {
+        "hide": true
+      },
+      "g_2K_circle_logo": {
+        "hide": true
+      },
+      "pCone1": {
+        "hide": true
+      },
+      "frame8_glare": {
+        "bounds": [
+          55,
+          -168.5,
+          360,
+          -142
+        ],
+        "straighten": true,
+        "rgb": [
+          1,
+          1,
+          1
+        ],
+        "alpha": 1
+      },
+      "frame9_glare": {
+        "hide": true
+      },
+      "text_nodeMask": {
+        "bounds": [
+          -2000,
+          -2000,
+          -1600,
+          -1800
+        ],
+        "hide": true
+      }
+    },
+    "text": {
+      "away_score": {
+        "position": [
+          -131,
+          -194.5
+        ]
+      },
+      "home_score": {
+        "position": [
+          80,
+          -194.5
+        ]
+      },
+      "quarter": [
+        124,
+        -194.5
+      ],
+      "gameclock": [
+        172,
+        -194.5
+      ],
+      "shotclock": [
+        215,
+        -194.5
+      ],
+      "away_ABL": [
+        -316,
+        -159
+      ],
+      "home_ABL": [
+        294,
+        -193
+      ],
+      "player_info": [
+        207.5,
+        -160
+      ],
+      "bottombar_textNode_1": [
+        207.5,
+        -160
+      ],
+      "bottombar_textNode_2": [
+        207.5,
+        -151
+      ]
+    }
+  },
+  "6th_man_meter": {
+    "parts": {
+      "sixth_man_meter": {
+        "bounds": [
+          20,
+          -13.5,
+          145,
+          -8.5
+        ],
+        "rgb": [
+          1,
+          1,
+          1
+        ]
+      }
+    }
+  },
+  "6th_topbar": {
+    "parts": {
+      "g_top_bar": [
+        {
+          "bounds": [
+            -340,
+            -168.5,
+            -35,
+            -152.5
+          ],
+          "vertex_range": [
+            0,
+            12
+          ],
+          "straighten": true
+        },
+        {
+          "vertex_range": [
+            12,
+            16
+          ],
+          "hide": true
+        }
+      ]
+    },
+    "text": {
+      "th_man": [
+        294,
+        -183
+      ]
+    },
+    "disable_text": true
+  },
+  "scorebug_topbar": {
+    "parts": {
+      "g_top_bar": [
+        {
+          "bounds": [
+            -340,
+            -168.5,
+            -35,
+            -152.5
+          ],
+          "vertex_range": [
+            0,
+            10
+          ],
+          "straighten": true
+        },
+        {
+          "vertex_range": [
+            10,
+            20
+          ],
+          "hide": true
+        }
+      ],
+      "text_nodeMask": {
+        "bounds": [
+          -2000,
+          -2000,
+          -1600,
+          -1800
+        ],
+        "hide": true
+      }
+    },
+    "text": {
+      "lt_6th_man": [
+        -335,
+        -164
+      ],
+      "rt_6th_man": [
+        -183,
+        -164
+      ]
+    },
+    "disable_text": true
+  },
+  "scorebug_blackbar": {
+    "parts": {
+      "group_blackbar_text": {
+        "bounds": [
+          55,
+          -168.5,
+          360,
+          -138.5
+        ],
+        "vertex_range": [
+          0,
+          4
+        ],
+        "straighten": true
+      }
+    },
+    "text": {
+      "info": {
+        "position": [
+          207.5,
+          31.181
+        ],
+        "marker_offset": [
+          0,
+          -191.181,
+          216.20018
+        ]
+      }
+    }
+  }
+}

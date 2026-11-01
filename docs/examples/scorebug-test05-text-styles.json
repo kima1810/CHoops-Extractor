@@ -1,0 +1,56 @@
+{
+  "scorebug_bottombar": {
+    "home_score": {
+      "font": "Stratum2 25"
+    },
+    "away_score": {
+      "font": "Stratum2 25"
+    },
+    "gameclock": {
+      "font": "Stratum2 25"
+    },
+    "shotclock": {
+      "font": "Stratum2 25"
+    },
+    "quarter": {
+      "font": "Stratum2 25"
+    },
+    "away_ABL": {
+      "font": "Stratum2 12",
+      "literal_id": 3868687409,
+      "align": "center"
+    },
+    "home_ABL": {
+      "font": "Stratum2 25",
+      "literal_id": 3367239681,
+      "align": "center"
+    },
+    "player_info": {
+      "alpha": 1,
+      "color": [
+        222,
+        222,
+        222
+      ],
+      "align": "center"
+    },
+    "bottombar_textNode_1": {
+      "alpha": 1,
+      "color": [
+        222,
+        222,
+        222
+      ],
+      "align": "center"
+    },
+    "bottombar_textNode_2": {
+      "alpha": 1,
+      "color": [
+        222,
+        222,
+        222
+      ],
+      "align": "center"
+    }
+  }
+}

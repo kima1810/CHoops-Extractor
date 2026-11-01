@@ -1,0 +1,400 @@
+{
+  "scorebug_bottombar": {
+    "parts": {
+      "polySurface16": {
+        "bounds": [
+          -360,
+          -208.5,
+          360,
+          -168.5
+        ],
+        "rectify_uv": true,
+        "single_quad": true
+      },
+      "polySurface17": {
+        "bounds": [
+          -359,
+          -207.5,
+          -321,
+          -169.5
+        ],
+        "rectify_uv": true,
+        "single_quad": true
+      },
+      "color_1": {
+        "bounds": [
+          -320,
+          -207.5,
+          -153.5,
+          -169.5
+        ],
+        "rectify_uv": true,
+        "rgb": [
+          0.72,
+          0.72,
+          0.72
+        ]
+      },
+      "color_2": {
+        "bounds": [
+          -108.5,
+          -207.5,
+          57.5,
+          -169.5
+        ],
+        "rectify_uv": true,
+        "rgb": [
+          0.72,
+          0.72,
+          0.72
+        ]
+      },
+      "logo1": {
+        "bounds": [
+          -320,
+          -207.5,
+          -282,
+          -169.5
+        ],
+        "rectify_uv": true
+      },
+      "logo2": {
+        "bounds": [
+          -108,
+          -207.5,
+          -70,
+          -169.5
+        ],
+        "rectify_uv": true
+      },
+      "frame1": {
+        "bounds": [
+          -153.95,
+          -208.5,
+          -153.05,
+          -168.5
+        ],
+        "straighten": true,
+        "rgb": [
+          1,
+          1,
+          1
+        ],
+        "alpha": 1
+      },
+      "frame2": {
+        "bounds": [
+          -108.95,
+          -208.5,
+          -108.05,
+          -168.5
+        ],
+        "straighten": true,
+        "rgb": [
+          1,
+          1,
+          1
+        ],
+        "alpha": 1
+      },
+      "frame3": {
+        "bounds": [
+          57.05,
+          -208.5,
+          57.95,
+          -168.5
+        ],
+        "straighten": true,
+        "rgb": [
+          1,
+          1,
+          1
+        ],
+        "alpha": 1
+      },
+      "frame4": {
+        "bounds": [
+          102.05,
+          -208.5,
+          102.95,
+          -168.5
+        ],
+        "straighten": true,
+        "rgb": [
+          1,
+          1,
+          1
+        ],
+        "alpha": 1
+      },
+      "frame5": {
+        "bounds": [
+          141.55,
+          -208.5,
+          142.45,
+          -168.5
+        ],
+        "straighten": true,
+        "rgb": [
+          1,
+          1,
+          1
+        ],
+        "alpha": 1
+      },
+      "frame6": {
+        "bounds": [
+          201.55,
+          -208.5,
+          202.45,
+          -168.5
+        ],
+        "straighten": true,
+        "rgb": [
+          1,
+          1,
+          1
+        ],
+        "alpha": 1
+      },
+      "frame7": {
+        "bounds": [
+          227.55,
+          -208.5,
+          228.45,
+          -168.5
+        ],
+        "straighten": true,
+        "rgb": [
+          1,
+          1,
+          1
+        ],
+        "alpha": 1
+      },
+      "ncaa2k8": {
+        "bounds": [
+          -335,
+          -168.5,
+          -295,
+          -155.5
+        ],
+        "rectify_uv": true
+      },
+      "drop_shadow": {
+        "bounds": [
+          -360,
+          -211.5,
+          360,
+          -208.5
+        ],
+        "straighten": true
+      },
+      "top_greybar": {
+        "bounds": [
+          -360,
+          -169.3,
+          360,
+          -168.5
+        ],
+        "straighten": true,
+        "alpha": 1
+      },
+      "bot_greybar": {
+        "bounds": [
+          -360,
+          -208.5,
+          360,
+          -207.7
+        ],
+        "straighten": true,
+        "alpha": 1
+      },
+      "g_2K_circle_logo": {
+        "hide": true
+      },
+      "pCone1": {
+        "hide": true
+      },
+      "frame8_glare": {
+        "bounds": [
+          130,
+          -168.5,
+          360,
+          -142
+        ],
+        "straighten": true,
+        "rgb": [
+          1,
+          1,
+          1
+        ],
+        "alpha": 1
+      },
+      "frame9_glare": {
+        "hide": true
+      }
+    },
+    "text": {
+      "away_score": {
+        "position": [
+          -131,
+          -194.5
+        ]
+      },
+      "home_score": {
+        "position": [
+          80,
+          -194.5
+        ]
+      },
+      "quarter": [
+        124,
+        -194.5
+      ],
+      "gameclock": [
+        172,
+        -194.5
+      ],
+      "shotclock": [
+        215,
+        -194.5
+      ],
+      "away_ABL": [
+        -217,
+        -187.5
+      ],
+      "home_ABL": [
+        -6,
+        -187.5
+      ],
+      "player_info": [
+        185,
+        -159
+      ],
+      "bottombar_textNode_1": [
+        185,
+        -159
+      ],
+      "bottombar_textNode_2": [
+        185,
+        -145
+      ]
+    }
+  },
+  "6th_man_meter": {
+    "parts": {
+      "sixth_man_meter": {
+        "bounds": [
+          60,
+          -15.5,
+          145,
+          -11.5
+        ],
+        "rgb": [
+          1,
+          1,
+          1
+        ]
+      }
+    }
+  },
+  "6th_topbar": {
+    "parts": {
+      "g_top_bar": [
+        {
+          "bounds": [
+            -340,
+            -168.5,
+            -35,
+            -152.5
+          ],
+          "vertex_range": [
+            0,
+            12
+          ],
+          "straighten": true
+        },
+        {
+          "vertex_range": [
+            12,
+            16
+          ],
+          "hide": true
+        }
+      ]
+    },
+    "text": {
+      "th_man": [
+        294,
+        -183
+      ]
+    }
+  },
+  "scorebug_topbar": {
+    "parts": {
+      "g_top_bar": [
+        {
+          "bounds": [
+            -340,
+            -168.5,
+            -35,
+            -152.5
+          ],
+          "vertex_range": [
+            0,
+            10
+          ],
+          "straighten": true
+        },
+        {
+          "vertex_range": [
+            10,
+            20
+          ],
+          "hide": true
+        }
+      ]
+    },
+    "text": {
+      "lt_6th_man": [
+        -335,
+        -164
+      ],
+      "rt_6th_man": [
+        -183,
+        -164
+      ]
+    }
+  },
+  "scorebug_blackbar": {
+    "parts": {
+      "group_blackbar_text": {
+        "bounds": [
+          55,
+          -168.5,
+          360,
+          -138.5
+        ],
+        "vertex_range": [
+          0,
+          4
+        ],
+        "straighten": true
+      }
+    },
+    "text": {
+      "info": {
+        "position": [
+          207.5,
+          33.181
+        ],
+        "marker_offset": [
+          0,
+          -191.181,
+          216.20018
+        ]
+      }
+    }
+  }
+}

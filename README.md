@@ -1,33 +1,71 @@
-## Choops Extractor
+# CHoops Modding Studio — v1.23
 
-*This is the continuation of a discontinued tool by BPhit in an effort to expand development on College Hoops 2K Reborn*
+Windows/macOS desktop editor and Python CLI for the verified PS3 College Hoops 2K8,
+NBA 2K9 and NBA 2K14 asset layouts. Browse/extract archives, edit supported textures
+and roster fields, preview authored models, and prepare compatible overrides.
+College Hoops has the broadest roster support. NBA 2K14 archive writing remains
+blocked because its authenticated SDAT container requires a separate validated writer.
 
-### Instructions
-1. Download the file from the releases page on here.
-2. Use 7-zip to extract it somewhere. You'll see two files: choops-extractor.exe and gtf2dds.exe
-3. Open a command prompt and type `choops-extractor.exe rip <path to game files up till USRDIR> <path to output>`
-4. It will take awhile, it will build a cache and then go through each IFF one by one to extract the contents.
+[Download desktop releases](https://github.com/ZMO34/CHoops-Extractor-Reborn/releases)
+· [Documentation index](docs/README.md) · [Support matrix](docs/FEATURE_MATRIX.md)
+· [Current status](docs/CURRENT_STATUS.md) · [Known limits](docs/KNOWN_LIMITATIONS.md)
 
-### Usage
-By default, the tool will extract all files within the IFFs. It will automatically convert the textures to DDS format.
+## macOS quick start
 
-#### Help
-If you want to get documentation on any of the options from the command prompt, use `choops-extractor.exe help` or `choops-extractor.exe help rip`
+Download the **macos-arm64** ZIP for Apple Silicon or **macos-x86_64** for Intel.
+Requires macOS 13+. Extract the complete ZIP and move `CHoops-Studio.app` to
+Applications. The app is ad-hoc signed, not Apple-notarized; see
+[Mac installation and limitations](docs/MACOS.md). No Python installation is needed.
 
-#### IFF Only
-If you do not want to extract the sub-files, you can add `--iff-only` to the command prompt and it will extract the full .iff file without any textures.
+## Windows quick start
 
-#### Index
-If you know which index you want to extract, you can use `-i <index>`. The index must be a number. It will extract the IFF file at <index> in the game files.
+1. Download the release ZIP and extract **all** files. Keep `_internal` beside
+   `CHoops-Studio.exe`; no Python installation is required.
+2. Open your original JB/PS3_GAME/USRDIR from Explorer. The application detects the
+   supported archive layout. Originals remain read-only.
+3. Choose **Select overrides folder** in Explorer for recursive replacement discovery.
+   DDS wins over a corresponding TXTR; TXTR is used when no DDS exists.
+4. Use the global **Preview source** dropdown to choose Source JB or Selected
+   overrides. This choice applies to model geometry and textures. Missing override
+   records can use a labelled JB fallback; selecting overrides does not build a JB.
+5. Edit confirmed roster fields in the selected row's side panel. Export a copy.
+   For supported writable archive layouts, select a new empty output folder in
+   Mod Builder and build manually. Read the completion report before testing.
 
-#### File by name
-If you only want to extract one IFF file by name, you can use `-f <name>`. This will ONLY extract the IFF file with the <name> specified. You have to include .iff on the end of the name.
+See [workflows](docs/WORKFLOWS.md) for rosters, previews, music and builds, and
+[troubleshooting](docs/TROUBLESHOOTING.md) for corrective actions.
 
-#### Cache
-If you want to force re-build the cache, use `-c`
+## Included features and boundaries
 
-#### Log output
-If you want to customize where to put the log output, use `--log-output <logPath>`. By default, the log is placed in the output directory.
+- Lazy IFF/CDF exploration, researched hash labels, category filters and roster
+  references; built-in DDS conversion with no proprietary converter dependency.
+- College Hoops roster side panels, ratings copy/paste, CSV review/import,
+  comparison, guarded school assignment, palettes, footwear and readable choices.
+- Separately detected NBA roster schemas with confirmed fields and guarded writes;
+  full NBA ratings, contracts/history and arbitrary text growth remain unresolved.
+- Static jerseys/shorts, shoes, arenas/floors, authored numbers 0–99 and the
+  supported surname preview. Court alignment guides have independent border,
+  3-point, and key/center-circle toggles. Full runtime rendering is not reproduced.
+- Licensed Music and Fight Songs subsections, WAV export and queued soundtrack
+  replacement. Titles/artists remain read-only; EBOOT is never edited.
+- Cached DDS conversions/prepared overrides, bounded parallel conversion, persistent
+  repair advice, transactional output and sequential source-preservation checks.
 
-#### Show console
-If you want to show the log in the console in addition to the log file, use `--show-console`.
+Gameplay compatibility is unverified. No emulator or automatic testing-game builds
+are used in project verification. No game assets are distributed. LGPL audio
+helpers include matching sources/notices in each desktop ZIP.
+
+## Develop and contribute
+
+```powershell
+python tools/dev/setup.py
+.\.venv\Scripts\python.exe -m choops_py.studio
+.\.venv\Scripts\python.exe tools/dev/verify.py
+```
+
+Use Python 3.12 x64 for the Windows baseline. See [development](docs/DEVELOPER_GUIDE.md),
+[test policy](docs/TESTING.md), and [release procedure](docs/RELEASING.md).
+Every update maintains documentation and a PR handoff in the
+[canonical repository](https://github.com/ZMO34/CHoops-Extractor-Reborn).
+Both development instances follow [AGENTS.md](AGENTS.md) and
+[collaboration rules](docs/COLLABORATION.md).

@@ -1,0 +1,257 @@
+{
+  "scorebug_bottombar": {
+    "parts": {
+      "polySurface16": {
+        "bounds": [
+          -380,
+          -195,
+          380,
+          -155
+        ]
+      },
+      "polySurface17": {
+        "bounds": [
+          -378,
+          -192,
+          -342,
+          -156
+        ],
+        "rectify_uv": true,
+        "z_offset": 1.0,
+        "single_quad": true
+      },
+      "drop_shadow": {
+        "bounds": [
+          -380,
+          -198,
+          380,
+          -195
+        ]
+      },
+      "top_greybar": {
+        "bounds": [
+          -380,
+          -156,
+          380,
+          -155
+        ]
+      },
+      "bot_greybar": {
+        "bounds": [
+          -380,
+          -195,
+          380,
+          -194
+        ]
+      },
+      "color_1": {
+        "bounds": [
+          -340,
+          -194,
+          -150,
+          -156
+        ],
+        "rectify_uv": true
+      },
+      "color_2": {
+        "bounds": [
+          -110,
+          -194,
+          80,
+          -156
+        ],
+        "rectify_uv": true
+      },
+      "logo1": {
+        "bounds": [
+          -337,
+          -192,
+          -303,
+          -158
+        ],
+        "rectify_uv": true
+      },
+      "logo2": {
+        "bounds": [
+          -107,
+          -192,
+          -73,
+          -158
+        ],
+        "rectify_uv": true
+      },
+      "frame1": {
+        "bounds": [
+          -150,
+          -194,
+          -110,
+          -156
+        ]
+      },
+      "frame2": {
+        "bounds": [
+          80,
+          -194,
+          120,
+          -156
+        ]
+      },
+      "frame3": {
+        "bounds": [
+          -300,
+          -194,
+          -150,
+          -156
+        ]
+      },
+      "frame4": {
+        "bounds": [
+          -70,
+          -194,
+          80,
+          -156
+        ]
+      },
+      "frame5": {
+        "bounds": [
+          170,
+          -194,
+          240,
+          -156
+        ]
+      },
+      "frame6": {
+        "bounds": [
+          240,
+          -194,
+          270,
+          -156
+        ]
+      },
+      "frame7": {
+        "bounds": [
+          270,
+          -194,
+          380,
+          -156
+        ]
+      },
+      "ncaa2k8": {
+        "bounds": [
+          274,
+          -191,
+          376,
+          -159
+        ],
+        "rectify_uv": true
+      },
+      "g_2K_circle_logo": {
+        "hide": true
+      },
+      "pCone1": {
+        "hide": true
+      },
+      "frame8_glare": {
+        "hide": true
+      },
+      "frame9_glare": {
+        "hide": true
+      }
+    },
+    "text": {
+      "away_score": [
+        -130,
+        -181
+      ],
+      "home_score": [
+        100,
+        -181
+      ],
+      "quarter": [
+        145,
+        -181
+      ],
+      "gameclock": [
+        205,
+        -181
+      ],
+      "shotclock": [
+        255,
+        -181
+      ],
+      "away_ABL": [
+        -225,
+        -174
+      ],
+      "home_ABL": [
+        5,
+        -174
+      ],
+      "player_info": [
+        274,
+        -147
+      ],
+      "bottombar_textNode_1": [
+        274,
+        -147
+      ],
+      "bottombar_textNode_2": [
+        274,
+        -132
+      ]
+    }
+  },
+  "6th_man_meter": {
+    "parts": {
+      "sixth_man_meter": {
+        "bounds": [
+          60,
+          -2,
+          145,
+          2
+        ],
+        "rgb_scale": 0.7
+      }
+    }
+  },
+  "6th_topbar": {
+    "parts": {
+      "g_top_bar": {
+        "bounds": [
+          -300,
+          -155,
+          -150,
+          -142
+        ]
+      }
+    },
+    "text": {
+      "th_man": [
+        -298,
+        -150
+      ]
+    }
+  },
+  "scorebug_topbar": {
+    "parts": {
+      "g_top_bar": {
+        "bounds": [
+          -300,
+          -155,
+          80,
+          -142
+        ]
+      }
+    },
+    "text": {
+      "lt_6th_man": [
+        -298,
+        -150
+      ],
+      "rt_6th_man": [
+        -68,
+        -150
+      ]
+    }
+  }
+}
